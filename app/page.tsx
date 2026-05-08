@@ -146,6 +146,11 @@ export default function Home() {
         />
 
         <div className="oaks-hero-inner section-container relative z-10 w-full pb-20 pt-28 md:pb-28 md:pt-32">
+          {/* Content scrim (cleaner than glass pills). */}
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 -z-10 w-[min(44rem,95%)] bg-gradient-to-r from-charcoal/70 via-charcoal/35 to-transparent"
+            aria-hidden
+          />
           <motion.div
             style={
               reduce
@@ -162,7 +167,7 @@ export default function Home() {
             >
               <motion.p
                 variants={heroItem}
-                className="inline-flex w-fit items-center rounded-full bg-charcoal/35 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 backdrop-blur-md ring-1 ring-white/10 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-0 md:ring-0 md:text-xs"
+                className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/75 md:text-xs [text-shadow:0_1px_18px_rgba(0,0,0,0.45)]"
               >
                 Jaipur · Specialty roastery
               </motion.p>
@@ -178,7 +183,7 @@ export default function Home() {
               </motion.h1>
               <motion.p
                 variants={heroItem}
-                className="mt-8 max-w-md rounded-2xl bg-charcoal/35 px-4 py-3 text-[17px] font-normal leading-[1.55] text-white/85 backdrop-blur-md ring-1 ring-white/10 md:bg-transparent md:px-0 md:py-0 md:backdrop-blur-0 md:ring-0 md:text-[19px] md:leading-[1.5]"
+                className="mt-8 max-w-md text-[17px] font-normal leading-[1.55] text-white/85 md:text-[19px] md:leading-[1.5] [text-shadow:0_1px_26px_rgba(0,0,0,0.55)]"
               >
                 Small-batch roasting and transparent sourcing—cups brewed with
                 intention, rooted in Jaipur&apos;s café culture.

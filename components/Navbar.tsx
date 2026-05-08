@@ -53,9 +53,19 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="heading-font text-lg tracking-tight text-charcoal transition-opacity hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage md:text-xl"
+            className="group inline-flex items-center gap-3 rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sage"
           >
-            Oaks &amp; Moks
+            <span className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-white/70 ring-1 ring-charcoal/10 md:h-10 md:w-10">
+              <img
+                src="/brand/logo-v2.png"
+                alt=""
+                className="h-[72%] w-[72%] object-contain opacity-95 transition-transform duration-300 group-hover:scale-[1.03]"
+                decoding="async"
+              />
+            </span>
+            <span className="heading-font text-lg tracking-tight text-charcoal transition-opacity group-hover:opacity-70 md:text-xl">
+              Oaks &amp; Moks
+            </span>
           </Link>
         </motion.div>
 
