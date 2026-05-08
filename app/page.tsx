@@ -356,14 +356,14 @@ export default function Home() {
         aria-labelledby="cafes-heading"
       >
         <motion.div
-          className="oaks-cafe-split overflow-hidden rounded-[1.75rem] bg-stone-warm shadow-soft ring-1 ring-charcoal/[0.05] md:grid md:grid-cols-2 md:rounded-[2rem] md:ring-charcoal/[0.04]"
+          className="oaks-cafe-split relative isolate overflow-hidden rounded-[1.75rem] bg-stone-warm shadow-soft ring-1 ring-charcoal/[0.05] md:grid md:grid-cols-2 md:rounded-[2rem] md:ring-charcoal/[0.04]"
           initial={reduce ? false : { opacity: 0, y: 48 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px", amount: 0.2 }}
           transition={{ duration: 0.95, ease: appleEase }}
         >
           <motion.div
-            className="grid grid-cols-2 gap-2 p-2 md:aspect-auto md:min-h-[32rem] md:gap-3 md:p-3"
+            className="relative z-0 grid aspect-[16/11] grid-cols-2 gap-2 overflow-hidden p-2 md:aspect-auto md:min-h-[32rem] md:gap-3 md:p-3"
             initial={reduce ? false : { scale: 1.02 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true, amount: 0.35 }}
@@ -374,11 +374,11 @@ export default function Home() {
                 key={src}
                 src={src}
                 alt={`Café ambience ${i + 1}`}
-                className="h-full min-h-[9rem] w-full rounded-xl object-cover md:min-h-[14rem] md:rounded-2xl"
+                className="h-full w-full rounded-xl object-cover md:min-h-[14rem] md:rounded-2xl"
               />
             ))}
           </motion.div>
-          <div className="flex flex-col justify-center px-8 py-14 md:px-16 md:py-20 lg:pl-20 lg:pr-24">
+          <div className="relative z-10 flex flex-col justify-center px-8 py-14 md:px-16 md:py-20 lg:pl-20 lg:pr-24">
             <Reveal>
               <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-sage">
                 Visit us
