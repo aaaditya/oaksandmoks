@@ -18,6 +18,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.bg-parchment { background-color: #FAF7F2; }
+
 .heading-font {
   font-family: "Cormorant Garamond", Georgia, serif;
 }
