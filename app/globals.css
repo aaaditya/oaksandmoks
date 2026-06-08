@@ -64,4 +64,117 @@
   .menu-card:hover .menu-card-accent {
     @apply scale-x-100;
   }
+
+  /*
+   * Film-grain overlay for dark sections (charcoal, olive).
+   * Adds a tactile, premium "roastery" texture.
+   */
+  .film-grain {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .film-grain::after {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+    opacity: 0.038;
+    pointer-events: none;
+    animation: grain-drift 0.45s steps(2) infinite;
+    z-index: 0;
+  }
+
+  /* Ensure content inside .film-grain sits above the grain layer */
+  .film-grain > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /*
+   * Shimmer sweep on gallery / brew image wrappers.
+   * Add class to the overflow-hidden wrapper.
+   */
+  .img-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      108deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.13) 50%,
+      transparent 70%
+    );
+    transform: translateX(-110%);
+    transition: transform 0.65s ease;
+    pointer-events: none;
+  }
+
+  .img-shimmer:hover::after {
+    transform: translateX(110%);
+  }
+
+  /*
+   * "Pour-in" reveal: a thin mocha line sweeps across a section
+   * heading as it enters view. Apply as sibling before the heading.
+   */
+  .pour-line {
+    @apply block h-px w-0 bg-sage/50 transition-[width] duration-700 ease-out;
+  }
+
+  .pour-line.vis {
+    @apply w-full;
+  }
+}
+
+/* ── Keyframes (outside @layer components so they're global) ─────────────── */
+
+@keyframes grain-drift {
+  0%   { transform: translate(0%,   0%); }
+  25%  { transform: translate(-2%,  2%); }
+  50%  { transform: translate(2%,  -2%); }
+  75%  { transform: translate(-1%,  1%); }
+  100% { transform: translate(0%,   0%); }
+}
+
+/* Floating upward particle — used for quote section atmosphere */
+@keyframes float-up {
+  0%   { transform: translateY(0)   scale(1);   opacity: 0; }
+  15%  { opacity: 1; }
+  80%  { opacity: 0.4; }
+  100% { transform: translateY(-140px) scale(0.5); opacity: 0; }
+}
+
+/* Soft pulse for the roastery "live" indicator */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.12); }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2.2s ease-in-out infinite;
+}
+
+/* Scroll-triggered word reveal — set as inline style delay */
+.word-reveal {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.word-reveal > span {
+  display: inline-block;
+  animation: word-rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes word-rise {
+  from { transform: translateY(115%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
 }
