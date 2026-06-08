@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,7 @@
   }
 
   ::selection {
-    background-color: rgba(122, 146, 115, 0.25);
+    background-color: rgba(122, 146, 115, 0.22);
     color: #1e1e1e;
   }
 }
@@ -30,15 +30,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-sage px-8 py-3.5 text-[15px] font-medium text-white shadow-soft transition-colors duration-300 hover:bg-sage-dark hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage;
+    @apply inline-flex items-center justify-center rounded-full bg-sage px-8 py-3.5 text-[15px] font-medium text-white shadow-soft transition-all duration-300 hover:bg-sage-dark hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage;
   }
 
   .btn-secondary-light {
-    @apply inline-flex items-center justify-center rounded-full border border-white/35 bg-white/[0.07] px-8 py-3.5 text-[15px] font-medium text-white shadow-sm backdrop-blur-md transition-colors duration-300 hover:border-white/55 hover:bg-white/[0.14] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+    @apply inline-flex items-center justify-center rounded-full border border-white/35 bg-white/[0.07] px-8 py-3.5 text-[15px] font-medium text-white shadow-sm backdrop-blur-md transition-all duration-300 hover:border-white/55 hover:bg-white/[0.14] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
   }
 
   .btn-ghost-dark {
-    @apply inline-flex items-center justify-center rounded-full border border-transparent bg-transparent px-7 py-3.5 text-[15px] font-medium text-charcoal transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage;
+    @apply inline-flex items-center justify-center rounded-full border border-transparent bg-transparent px-7 py-3.5 text-[15px] font-medium text-charcoal transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage;
     border-color: rgba(30, 30, 30, 0.12);
   }
 
@@ -47,8 +47,21 @@
     background-color: rgba(30, 30, 30, 0.03);
   }
 
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center rounded-full border border-white/25 bg-transparent px-7 py-3.5 text-[15px] font-medium text-white transition-all duration-300 hover:border-white/45 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
   .link-subtle {
-    @apply underline-offset-4 transition-colors hover:text-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage rounded-sm;
+    @apply rounded-sm underline-offset-4 transition-colors hover:text-sage focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sage;
     color: rgba(30, 30, 30, 0.7);
+  }
+
+  /* Menu card hover accent line */
+  .menu-card-accent {
+    @apply absolute left-0 top-0 h-[3px] w-full origin-left scale-x-0 rounded-t-2xl bg-sage transition-transform duration-500;
+  }
+
+  .menu-card:hover .menu-card-accent {
+    @apply scale-x-100;
   }
 }

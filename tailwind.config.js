@@ -12,13 +12,16 @@ module.exports = {
         sage: "#7A9273",
         "sage-dark": "#5F7359",
         mocha: "#6F4E37",
+        "mocha-light": "#8B6248",
         olive: "#556B4A",
+        "olive-dark": "#3D5035",
         beige: "#ECE8E1",
         charcoal: "#1E1E1E",
+        parchment: "#FAF7F2",
         stone: {
           warm: "#E8E4DC",
           muted: "#9C958A",
-        }
+        },
       },
       fontFamily: {
         serif: ['"Cormorant Garamond"', "Georgia", "serif"],
@@ -26,21 +29,43 @@ module.exports = {
         manrope: ['"Manrope"', "system-ui", "sans-serif"],
       },
       fontSize: {
-        "display": ["clamp(2.75rem,6vw+1rem,5.5rem)", { lineHeight: "1.05", letterSpacing: "-0.02em" }],
-        "display-sm": ["clamp(2rem,4vw+1rem,3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        display: [
+          "clamp(2.75rem,6vw+1rem,5.5rem)",
+          { lineHeight: "1.05", letterSpacing: "-0.02em" },
+        ],
+        "display-sm": [
+          "clamp(2rem,4vw+1rem,3.5rem)",
+          { lineHeight: "1.1", letterSpacing: "-0.02em" },
+        ],
       },
       boxShadow: {
-        "soft": "0 4px 24px -4px rgba(30, 30, 30, 0.08), 0 8px 16px -8px rgba(30, 30, 30, 0.06)",
-        "card": "0 2px 8px -2px rgba(30, 30, 30, 0.06), 0 12px 32px -12px rgba(30, 30, 30, 0.12)",
-        "card-hover": "0 8px 32px -8px rgba(30, 30, 30, 0.14), 0 16px 48px -16px rgba(30, 30, 30, 0.1)",
+        soft: "0 4px 24px -4px rgba(30, 30, 30, 0.08), 0 8px 16px -8px rgba(30, 30, 30, 0.06)",
+        card: "0 2px 8px -2px rgba(30, 30, 30, 0.06), 0 12px 32px -12px rgba(30, 30, 30, 0.12)",
+        "card-hover":
+          "0 8px 32px -8px rgba(30, 30, 30, 0.14), 0 16px 48px -16px rgba(30, 30, 30, 0.1)",
+        float: "0 16px 48px -12px rgba(30, 30, 30, 0.18), 0 4px 16px -4px rgba(30, 30, 30, 0.1)",
       },
       maxWidth: {
-        "content": "90rem",
+        content: "90rem",
       },
       transitionDuration: {
-        "400": "400ms",
+        400: "400ms",
       },
-    }
+      animation: {
+        marquee: "marquee 24s linear infinite",
+        "marquee-reverse": "marquee-reverse 30s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "marquee-reverse": {
+          from: { transform: "translateX(-50%)" },
+          to: { transform: "translateX(0)" },
+        },
+      },
+    },
   },
-  plugins: []
-}
+  plugins: [],
+};
